@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700&display=swap" rel="stylesheet">
   <style>
-    body { width: 150px; padding: 10px; text-align: center; font-family: sans-serif; }
-    button { background: #ff4444; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 4px; }
-    button:hover { background: #cc0000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 200px;
+      background: #0e0e10;
+      padding: 20px;
+      font-family: 'DM Mono', monospace;
+      border-radius: 16px;
+    }
+    .logo-tile {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, #6339dc, #9b6bfa);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+    .title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: #f0eeff; }
+    .subtitle { font-size: 9px; color: #6b6b7e; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
+    .dot { margin-left: auto; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 6px rgba(74,222,128,0.6); }
+    .status-card { background: #17171b; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; border: 0.5px solid #222228; }
+    .status-label { font-size: 9px; color: #4a4a5a; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .status-value { font-size: 12px; color: #9b8fff; font-weight: 500; }
+    .reset-btn {
+      width: 100%; padding: 11px;
+      background: linear-gradient(135deg, #6339dc, #8b5cf6);
+      border: none; border-radius: 10px; cursor: pointer;
+      font-family: 'DM Mono', monospace; font-size: 12px;
+      font-weight: 500; color: #f5f0ff; letter-spacing: 0.04em;
+      transition: opacity 0.15s, transform 0.1s;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .reset-btn:active { transform: scale(0.97); }
+    .footer { margin-top: 14px; display: flex; justify-content: space-between; }
+    .footer span { font-size: 9px; color: #333340; }
   </style>
 </head>
 <body>
-<p>Venbraker</p>
-  <button id="resetBtn">Reset</button>
+  <div class="header">
+    <div class="logo-tile">
+      <!-- no icon, put one here yourself if you want to! -->
+    </div>
+    <div>
+      <div class="title">Venbraker</div>
+      <div class="subtitle">Extension</div>
+    </div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-label">Status</div>
+    <div class="status-value" id="status">Active · Session 1</div>
+  </div>
+
+  <button class="reset-btn" id="resetBtn">↺ Reset</button>
+
+  <div class="footer">
+    <span>v2.4.1</span>
+    <span>⌘ R to reset</span>
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
